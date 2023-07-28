@@ -22,6 +22,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: berubenic
   password: <%= ENV['APPNAME_DATABASE_PASSWORD'] %>
+  
 development:
   <<: *default
   database: ror_admin_panel_development
@@ -85,3 +86,4 @@ production:
   database: ror_admin_panel_production
   username: ror_admin_panel
   password: <%= ENV["ROR_ADMIN_PANEL_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
