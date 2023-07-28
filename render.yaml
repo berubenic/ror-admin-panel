@@ -1,18 +1,18 @@
 databases:
-  - name: ror-admin-panel
-    databaseName: ror-admin-panel
-    user: ror-admin-panel
+  - name: rorAdminPanel
+    databaseName: rorAdminPanel
+    user: rorAdminPanel
 
 services:
   - type: web
-    name: ror-admin-panel
+    name: rorAdminPanel
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: ror-admin-panel
+          name: rorAdminPanel
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
